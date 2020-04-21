@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "basketty",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "description": "basketty",
     "content_scripts": [{
         "css": ["styles.css"],
@@ -12,5 +12,14 @@
         "persistent": false,
         "scripts": ["bg.js"]
       },
-    "permissions": [ "cookies", "http://*/*", "https://*/*" ]
+    "permissions": [ "cookies", "http://*/*", "https://*/*" ],
+    "browser_action": {
+        "default_icon": {                    // optional
+          "16": "images/icon.png",           // optional
+          "24": "images/icon.png",           // optional
+          "32": "images/icon.png"            // optional
+        },
+        "default_title": "Google Mail",      // optional; shown in tooltip
+        "default_popup": "popup.html"        // optional
+      }
 }
