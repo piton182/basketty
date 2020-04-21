@@ -1,7 +1,3 @@
-body {
-    color: #ffc0cb !important;
-}
-
 #overlay {
     position: fixed; /* Sit on top of the page content */
     /*display: none; /* Hidden by default */
@@ -11,5 +7,6 @@ body {
     bottom: 0;
     background-color: #81D8D090; /* Black background with opacity */
     z-index: 2000; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
+    cursor: pointer; /* Add a pointer on hover */;
+    color: #ffc0cb !important;
 }
