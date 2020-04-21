@@ -18,3 +18,16 @@ chrome.runtime.onMessage.addListener(function(msg, _, sendResponse) {
     // https://developer.chrome.com/extensions/messaging#simple
     return true;
 });
+
+chrome.browserAction.onClicked.addListener(function(tab) {
+    console.log('clicked');
+    chrome.storage.local.get(['basketty.on'], function(result) {
+        chrome.storage.local.set({'basketty.on': !result['basketty.on']}, function() {
+            chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                chrome.tabs.sendMessage(tabs[0].id, {on: !result}, function(response) {
+                //   console.log(response.farewell);
+                });
+            });
+        });
+    });
+});
