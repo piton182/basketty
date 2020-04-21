@@ -13,7 +13,5 @@ overlay.insertAdjacentHTML('afterbegin', `
 document.body.appendChild(overlay);
 
 chrome.runtime.sendMessage({msg: 'hi from content'}, function(resp) {
-    document.getElementById("basketty::cookie").innerHTML="asdf";
-    console.log(document.getElementById("basketty::cookie").innerHTML);
-    console.log(resp);
+    document.getElementById("basketty::cookie").innerHTML=resp.value;
 });
