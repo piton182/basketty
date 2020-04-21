@@ -11,7 +11,7 @@ chrome.runtime.onMessage.addListener(function(msg, _, sendResponse) {
         console.log("got cookie", cookie);
         // NB! used asynchronously => 'return true;' needed
         // https://developer.chrome.com/extensions/messaging#simple
-        sendResponse({ text: 'hi from bg', value: cookie.value });
+        sendResponse({ text: 'hi from bg', value: cookie ? cookie.value : null });
     });
 
     // NB! Don't delete! Needed to be able to use sendResponse asynchronously.
